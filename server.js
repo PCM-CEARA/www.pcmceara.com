@@ -24,3 +24,20 @@ io.on('connection', (socket) => {
 server.listen(3000, () => {
     console.log('Servidor rodando na porta 3000');
 });
+const express = require('express');
+const app = express();
+
+app.get('/stream', (req, res) => {
+    res.setHeader('Content-Type', 'text/event-stream');
+    res.setHeader('Cache-Control', 'no-cache');
+    res.setHeader('Connection', 'keep-alive');
+    res.flushHeaders();
+
+    setInterval(() => {
+        res.write(`data: ${new Date().toLocaleTimeString()}\n\n`);
+    }, 1000);
+});
+
+app.listen(3000, () => {
+    console.log('Servidor rodando na porta 3000');
+});
