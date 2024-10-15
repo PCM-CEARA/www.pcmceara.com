@@ -119,3 +119,52 @@ function clearAddVehicleForm() {
     document.getElementById('pieces-green').value = '';
     document.getElementById('vehicle-price').value = '';
 }
+
+const express = require('express');
+const mongoose = require('mongoose');
+const Vehicle = require('./Vehicle'); // Importa o modelo Vehicle
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use(express.json());
+
+// Conexão com o MongoDB
+const uri = 'mongodb+srv://gomessilva02117:<SuaSenhaAqui>@cluster0.0mrxd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => {
+  console.log('Conexão bem-sucedida ao MongoDB!');
+})
+.catch((error) => {
+  console.error('Erro ao conectar ao MongoDB:', error);
+});
+
+// Rota para adicionar um veículo
+app.post('/vehicles', async (req, res) => {
+  const vehicle = new Vehicle(req.body);
+  try {
+    await vehicle.save();
+    res.status(201).send(vehicle);
+  } catch (error) {
+    res.status(400).send(error);
+  }
+});
+
+// Rota para listar todos os veículos
+app.get('/vehicles', async (req, res) => {
+  try {
+    const vehicles = await Vehicle.find();
+    res.send(vehicles);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// Iniciar o servidor
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+});
+
