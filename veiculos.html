@@ -8,6 +8,19 @@
   <link rel="icon" href="img/logo1.png">
 </head>
 <body>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    const socket = io();
+
+    socket.on('connect', () => {
+        console.log('Conectado ao servidor');
+    });
+</script>
+
+
+  
+  
   <div id="header">
     <h1>Veículos Registrados</h1>
     <button onclick="window.location.href='login.html'">Voltar</button>
