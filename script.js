@@ -64,6 +64,7 @@ function addVehicle() {
       });
       localStorage.setItem('vehicles', JSON.stringify(vehicles));
       displayVehicles();
+      clearAddVehicleForm(); // Limpar o formulário após adicionar
     };
     reader.readAsDataURL(vehiclePhoto);
   }
@@ -102,4 +103,12 @@ function removeVehicle(index) {
   vehicles.splice(index, 1);
   localStorage.setItem('vehicles', JSON.stringify(vehicles));
   displayVehicles();
+}
+
+function clearAddVehicleForm() {
+  document.getElementById('vehicle-name').value = '';
+  document.getElementById('vehicle-photo').value = '';
+  document.getElementById('pieces-blue').value = '';
+  document.getElementById('pieces-green').value = '';
+  document.getElementById('vehicle-price').value = '';
 }
