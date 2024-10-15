@@ -1,6 +1,56 @@
 let loggedInUser = null;
 let vehicles = JSON.parse(localStorage.getItem('vehicles')) || [];
 
+// Função de login
+function login() {
+    const username = document.getElementById('login-username').value;
+    const password = document.getElementById('login-password').value;
+
+    // Verifica se as credenciais são válidas (simples, sem backend real)
+    if (username && password) {
+        loggedInUser = username;
+        document.getElementById('auth-section').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+        displayVehicles();
+    } else {
+        alert('Usuário ou senha inválidos!');
+    }
+}
+
+// Função de logout
+function logout() {
+    loggedInUser = null;
+    document.getElementById('auth-section').style.display = 'block';
+    document.getElementById('main-content').style.display = 'none';
+}
+
+// Exibir formulário de registro
+function showRegisterForm() {
+    document.getElementById('login-form').style.display = 'none';
+    document.getElementById('register-form').style.display = 'block';
+}
+
+// Exibir formulário de login
+function showLoginForm() {
+    document.getElementById('login-form').style.display = 'block';
+    document.getElementById('register-form').style.display = 'none';
+}
+
+// Função de registro
+function register() {
+    const username = document.getElementById('register-username').value;
+    const password = document.getElementById('register-password').value;
+
+    // Registro básico sem backend (apenas para exibição)
+    if (username && password) {
+        alert('Usuário registrado com sucesso!');
+        showLoginForm();
+    } else {
+        alert('Preencha todos os campos!');
+    }
+}
+
+// Função para adicionar veículo
 function addVehicle() {
     const vehicleName = document.getElementById('vehicle-name').value;
     const vehiclePhoto = document.getElementById('vehicle-photo').files[0];
@@ -24,21 +74,48 @@ function addVehicle() {
             localStorage.setItem('vehicles', JSON.stringify(vehicles));
             displayVehicles();
             clearAddVehicleForm();
-
-            // Envia a atualização para todos os clientes conectados
-            socket.emit('updateVehicles', vehicles);
         };
         reader.readAsDataURL(vehiclePhoto);
+    } else {
+        alert('Selecione uma foto para o veículo.');
     }
 }
 
+// Função para exibir veículos
+function displayVehicles() {
+    const vehicleList = document.getElementById('vehicle-list');
+    vehicleList.innerHTML = '';
+
+    vehicles.forEach((vehicle, index) => {
+        const vehicleItem = document.createElement('div');
+        vehicleItem.classList.add('vehicle-item');
+        vehicleItem.innerHTML = `
+            <img src="${vehicle.photo}" alt="${vehicle.name}">
+            <div class="details">
+                <h3>${vehicle.name}</h3>
+                <p><strong>Peças Azuis:</strong> ${vehicle.piecesBlue}</p>
+                <p><strong>Peças Verdes:</strong> ${vehicle.piecesGreen}</p>
+                <p><strong>Preço:</strong> R$ ${vehicle.price}</p>
+                <p><strong>Adicionado por:</strong> ${vehicle.addedBy}</p>
+                <button onclick="removeVehicle(${index})">Remover</button>
+            </div>
+        `;
+        vehicleList.appendChild(vehicleItem);
+    });
+}
+
+// Função para remover veículo
 function removeVehicle(index) {
     vehicles.splice(index, 1);
     localStorage.setItem('vehicles', JSON.stringify(vehicles));
     displayVehicles();
-
-    // Envia a atualização para todos os clientes conectados
-    socket.emit('updateVehicles', vehicles);
 }
 
-// Outras funções...
+// Função para limpar o formulário de adição de veículos
+function clearAddVehicleForm() {
+    document.getElementById('vehicle-name').value = '';
+    document.getElementById('vehicle-photo').value = '';
+    document.getElementById('pieces-blue').value = '';
+    document.getElementById('pieces-green').value = '';
+    document.getElementById('vehicle-price').value = '';
+}
