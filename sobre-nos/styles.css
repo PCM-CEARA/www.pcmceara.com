@@ -58,7 +58,7 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('img/rolls-royce-spectre-7680x4320-19213.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-image: url('img/fundoo.JPG'); /* Substitua pelo caminho da sua imagem */
     background-size: cover;
     background-position: center;
     animation: zoom 30s infinite alternate;
