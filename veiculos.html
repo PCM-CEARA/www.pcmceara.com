@@ -9,14 +9,6 @@
 </head>
 <body>
 
-<script src="/socket.io/socket.io.js"></script>
-<script>
-    const socket = io();
-
-    socket.on('connect', () => {
-        console.log('Conectado ao servidor');
-    });
-
     socket.on('updateVehicles', (vehicles) => {
         localStorage.setItem('vehicles', JSON.stringify(vehicles));
         displayVehicles();
@@ -57,6 +49,11 @@
     }
 
     window.onload = displayVehicles;
+  
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script> <!-- Para o Realtime Database -->
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script> <!-- Para Firestore -->
+
 </script>
 </body>
 </html>
