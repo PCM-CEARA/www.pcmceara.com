@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Veículoss</title>
+  <title>Lista de Veículos</title>
   <link rel="stylesheet" href="veiculos.css">
   <link rel="icon" href="img/logo1.png">
 </head>
@@ -16,47 +16,47 @@
     socket.on('connect', () => {
         console.log('Conectado ao servidor');
     });
+
+    socket.on('updateVehicles', (vehicles) => {
+        localStorage.setItem('vehicles', JSON.stringify(vehicles));
+        displayVehicles();
+    });
 </script>
 
-
-  
-  
-  <div id="header">
+<div id="header">
     <h1>Veículos Registrados</h1>
     <button onclick="window.location.href='login.html'">Voltar</button>
-  </div>
+</div>
 
-  <div class="container">
+<div class="container">
     <div id="vehicle-list"></div>
-  </div>
+</div>
 
-  <script>
-    // Carregar veículos do localStorage e exibi-los
+<script>
     const vehicles = JSON.parse(localStorage.getItem('vehicles')) || [];
 
     function displayVehicles() {
-      const vehicleList = document.getElementById('vehicle-list');
-      vehicleList.innerHTML = '';
+        const vehicleList = document.getElementById('vehicle-list');
+        vehicleList.innerHTML = '';
 
-      vehicles.forEach(vehicle => {
-        const vehicleItem = document.createElement('div');
-        vehicleItem.classList.add('vehicle-item');
-        vehicleItem.innerHTML = `
-          <img src="${vehicle.photo}" alt="${vehicle.name}">
-          <div class="details">
-            <h3>${vehicle.name}</h3>
-            <p><strong>Peças Azuis:</strong> ${vehicle.piecesBlue}</p>
-            <p><strong>Peças Verdes:</strong> ${vehicle.piecesGreen}</p>
-            <p><strong>Preço:</strong> R$ ${vehicle.price}</p>
-            <p><strong>Adicionado por:</strong> ${vehicle.addedBy}</p>
-          </div>
-        `;
-        vehicleList.appendChild(vehicleItem);
-      });
+        vehicles.forEach(vehicle => {
+            const vehicleItem = document.createElement('div');
+            vehicleItem.classList.add('vehicle-item');
+            vehicleItem.innerHTML = `
+                <img src="${vehicle.photo}" alt="${vehicle.name}">
+                <div class="details">
+                    <h3>${vehicle.name}</h3>
+                    <p><strong>Peças Azuis:</strong> ${vehicle.piecesBlue}</p>
+                    <p><strong>Peças Verdes:</strong> ${vehicle.piecesGreen}</p>
+                    <p><strong>Preço:</strong> R$ ${vehicle.price}</p>
+                    <p><strong>Adicionado por:</strong> ${vehicle.addedBy}</p>
+                </div>
+            `;
+            vehicleList.appendChild(vehicleItem);
+        });
     }
 
-    // Chamar a função para exibir os veículos quando a página for carregada
     window.onload = displayVehicles;
-  </script>
+</script>
 </body>
 </html>
