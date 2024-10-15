@@ -87,7 +87,7 @@ function displayVehicles() {
       </div>
     `;
 
-    // Botão de remover só aparece para o usuário que adicionou o veículo
+    // Botão de remover aparece para todos os usuários
     if (vehicle.addedBy === loggedInUser) {
       const removeButton = document.createElement('button');
       removeButton.textContent = 'Remover Veículo';
