@@ -24,11 +24,11 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            overflow-x: hidden; /* Impede a rolagem horizontal */
+            overflow-x: hidden;
         }
 
         header {
-            background-color: #5a67d8; /* Cor de fundo do cabeçalho */
+            background-color: #5a67d8;
             padding: 10px 20px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
@@ -42,7 +42,7 @@
         .nav-list {
             list-style: none;
             display: flex;
-            gap: 15px; /* Espaçamento entre os botões */
+            gap: 15px;
         }
 
         .nav-list a {
@@ -52,24 +52,28 @@
             color: white;
             border-radius: 5px;
             transition: background-color 0.3s;
-            font-weight: 500; /* Fonte em negrito */
+            font-weight: 500;
         }
 
         .nav-list a:hover {
             background-color: rgba(0, 86, 179, 0.7);
         }
 
-        .nav-list .button-anuncios {
-            background-color: rgba(0, 123, 255, 0.7); /* Cor azul para o botão Anúncios */
-            color: white; /* Cor do texto */
+        .nav-list .button-anuncios,
+        .nav-list .button-membros,
+        .nav-list .button-metas {
+            background-color: rgba(0, 123, 255, 0.7);
+            color: white;
             padding: 10px 15px;
             border-radius: 5px;
             transition: background-color 0.3s;
-            text-decoration: none; /* Remove sublinhado */
+            text-decoration: none;
         }
 
-        .nav-list .button-anuncios:hover {
-            background-color: rgba(0, 86, 179, 0.7); /* Cor ao passar o mouse */
+        .nav-list .button-anuncios:hover,
+        .nav-list .button-membros:hover,
+        .nav-list .button-metas:hover {
+            background-color: rgba(0, 86, 179, 0.7);
         }
 
         .menu-button {
@@ -90,17 +94,17 @@
         .sidebar {
             position: fixed;
             top: 0;
-            left: -250px; /* Escondido inicialmente */
+            left: -250px;
             width: 250px;
             height: 100%;
-            background-color: #5a67d8; /* Cor de fundo da sidebar */
+            background-color: #5a67d8;
             transition: left 0.3s ease;
             padding: 20px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
         }
 
         .sidebar.open {
-            left: 0; /* Exibe o menu */
+            left: 0;
         }
 
         .sidebar ul {
@@ -117,7 +121,7 @@
             text-decoration: none;
             font-size: 18px;
             padding: 10px;
-            display: block; /* Para facilitar o clique */
+            display: block;
             border-radius: 5px;
             transition: background-color 0.3s;
         }
@@ -127,10 +131,10 @@
         }
 
         main {
-            padding: 0; /* Remove o padding lateral */
-            margin: 0; /* Remove a margem lateral */
-            width: 100vw; /* Ocupa toda a largura da tela */
-            overflow-x: hidden; /* Impede a rolagem horizontal */
+            padding: 0;
+            margin: 0;
+            width: 100vw;
+            overflow-x: hidden;
         }
 
         #home {
@@ -175,11 +179,11 @@
 
         @media (max-width: 768px) {
             .nav-list {
-                display: none; /* Esconde a lista de navegação em telas pequenas */
+                display: none;
             }
 
             .menu-button {
-                display: inline-block; /* Mostra o botão de menu em telas pequenas */
+                display: inline-block;
             }
         }
 
@@ -204,7 +208,8 @@
                 <ul class="nav-list">
                     <li><a href="lideres/lideres.html" rel="noopener">Líderes</a></li>
                     <li><a href="membros/membros.html" class="button-membros" rel="noopener">Membros</a></li>
-                    <li><a href="login.html" class="button-cars" rel="noopener">Anuncios</a></li>
+                    <li><a href="metas.html" class="button-metas" rel="noopener">Metas</a></li> <!-- Botão Metas -->
+                    <li><a href="login.html" class="button-anuncios" rel="noopener">Anúncios</a></li>
                 </ul>
             </nav>
         </div>
@@ -212,7 +217,8 @@
             <ul>
                 <li><a href="lideres/lideres.html">Líderes</a></li>
                 <li><a href="membros/membros.html">Membros</a></li>
-                <li><a href="login.html">Anuncios</a></li>
+                <li><a href="metas.html">Metas</a></li> <!-- Botão Metas -->
+                <li><a href="login.html">Anúncios</a></li>
             </ul>
         </div>
     </header>
