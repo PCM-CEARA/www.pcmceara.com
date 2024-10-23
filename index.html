@@ -31,6 +31,10 @@
             background-color: #5a67d8;
             padding: 10px 20px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: top 0.3s;
         }
 
         nav {
@@ -56,23 +60,6 @@
         }
 
         .nav-list a:hover {
-            background-color: rgba(0, 86, 179, 0.7);
-        }
-
-        .nav-list .button-anuncios,
-        .nav-list .button-membros,
-        .nav-list .button-metas {
-            background-color: rgba(0, 123, 255, 0.7);
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            text-decoration: none;
-        }
-
-        .nav-list .button-anuncios:hover,
-        .nav-list .button-membros:hover,
-        .nav-list .button-metas:hover {
             background-color: rgba(0, 86, 179, 0.7);
         }
 
@@ -142,12 +129,12 @@
         }
 
         #home-container-text h1 {
-            font-size: 24px;
+            font-size: 32px; /* Aumentado para melhor visibilidade */
             margin: 10px 0;
         }
 
         #home-container-text p {
-            font-size: 16px;
+            font-size: 20px; /* Aumentado para melhor visibilidade */
             margin: 10px 0;
         }
 
@@ -160,6 +147,7 @@
             border-radius: 5px;
             text-decoration: none;
             transition: background-color 0.3s;
+            font-size: 18px; /* Aumentado para melhor visibilidade */
         }
 
         #home-container-text a:hover {
@@ -169,12 +157,70 @@
         img {
             max-width: 100%;
             height: auto;
+            margin-top: 20px;
         }
 
         footer {
             text-align: center;
             padding: 20px 0;
             background-color: #f1f1f1;
+        }
+
+        .bottom-navigation {
+            background-color: #5a67d8;
+            padding: 20px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .bottom-navigation a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .bottom-navigation a:hover {
+            background-color: rgba(0, 86, 179, 0.7);
+        }
+
+        .news-section {
+            padding: 20px;
+            background-color: #e8e8e8;
+        }
+
+        .news-article {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s;
+        }
+
+        .news-article:hover {
+            transform: scale(1.02);
+        }
+
+        .news-article img {
+            width: 400px; /* Mantido em 400px */
+            height: auto;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+
+        .news-article h3 {
+            margin-top: 0;
+            font-size: 24px; /* Aumentado para melhor visibilidade */
+        }
+
+        .news-article p {
+            font-size: 18px; /* Aumentado para melhor visibilidade */
+            margin-top: 5px;
         }
 
         @media (max-width: 768px) {
@@ -193,7 +239,7 @@
             }
 
             #home-container-text p {
-                font-size: 18px;
+                font-size: 20px;
             }
         }
     </style>
@@ -208,7 +254,7 @@
                 <ul class="nav-list">
                     <li><a href="lideres/lideres.html" rel="noopener">Líderes</a></li>
                     <li><a href="membros/membros.html" class="button-membros" rel="noopener">Membros</a></li>
-                    <li><a href="metas.html" class="button-metas" rel="noopener">Metas</a></li> <!-- Botão Metas -->
+                    <li><a href="metas.html" class="button-metas" rel="noopener">Metas</a></li>
                     <li><a href="login.html" class="button-anuncios" rel="noopener">Anúncios</a></li>
                 </ul>
             </nav>
@@ -217,7 +263,7 @@
             <ul>
                 <li><a href="lideres/lideres.html">Líderes</a></li>
                 <li><a href="membros/membros.html">Membros</a></li>
-                <li><a href="metas.html">Metas</a></li> <!-- Botão Metas -->
+                <li><a href="metas.html">Metas</a></li>
                 <li><a href="login.html">Anúncios</a></li>
             </ul>
         </div>
@@ -228,35 +274,63 @@
             <div class="grid-layout">
                 <div id="home">
                     <div id="home-container-text">
-                        <h1 class="delayMediumReveal">PCM CEARÁ BR</h1>
-                        <p class="typewriter">Nossa história no cenário do one state.</p>
-                        <a href="sobre-nos/sobre.html" class="delayExtraBigReveal">Sobre Nós</a>
+                        <h1>Bem-vindo ao PCM CEARÁ BR!</h1>
+                        <p>Estamos aqui para te ajudar a conquistar seu lugar no jogo.</p>
+                        <a href="#noticias">Saiba mais</a>
                     </div>
-
-                    <img src="assets/image/logo.svg" alt="ícone iuricode" onload="SVGInject(this)" id="logo" />
+                    <img src="img/logo1.png" alt="Logo do PCM CEARÁ BR" />
                 </div>
             </div>
         </section>
 
-        <footer>
-            <div class="grid-layout">
-                <p>
-                    PCM CEARÁ BR © 2024 Todos os direitos reservados.
-                </p>
+        <section id="noticias" class="news-section">
+            <h2>Últimas Notícias</h2>
+            <article class="news-article">
+                <img src="noticias/noticias1.jpg" alt="Notícia 1" />
                 <div>
-                    <p>PCM CEARÁ BR</p>
+                    <h3>FESTA</h3>
+                    <p>Depois de ser banido mais de 3 vezes estamos ai de volta na espera de mais banimentos. A tropa desiste nunca, sempre na felicidade com o nosso lider @ Perna Cwb e os nossos membros @ Marcola Floripa e @ Neguinho Toby. Nossa tropa não para, somos os melhores de todo o GAME.
+                        <br>
+
+                        <br>
+                        "HISTORIA DE GIGANTES NAO CABE NO LIVRO.""
+                    </p>
                 </div>
+            </article>
+            <article class="news-article">
+
+                <div>
+                    <h3></h3
+                    <p></p>
+                </div>
+            </article>
+            <article class="news-article">
+                
+                <div>
+                    <h3></h3>
+                    <p></p>
+                </div>
+            </article>
+        </section>
+
+        <footer>
+            <div class="bottom-navigation">
+                <a href="#home">Início</a>
+                <a href="#noticias">Notícias</a>
+                <a href="#sobre-nos">Sobre Nós</a>
+                <a href="#contato">Contato</a>
             </div>
+            <p>&copy; 2024 PCM CEARÁ BR. Todos os direitos reservados.</p>
         </footer>
     </main>
 
     <script>
-        document.getElementById('menu-toggle').onclick = function() {
-            var sidebar = document.getElementById('sidebar');
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+
+        menuToggle.addEventListener('click', () => {
             sidebar.classList.toggle('open');
-        };
+        });
     </script>
-    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
-    <script type="module" src="assets/js/main.js"></script>
 </body>
 </html>
