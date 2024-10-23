@@ -440,6 +440,6 @@ html, body {
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
-    background: url('ft.webp') no-repeat center center fixed; /* Substitua pelo caminho da sua imagem */
+    background: url('ft.webp') no-repeat center center; /* Substitua pelo caminho da sua imagem */
     background-size: cover; /* Para cobrir toda a tela */
 }
