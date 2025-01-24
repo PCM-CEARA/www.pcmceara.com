@@ -1,145 +1,110 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PCM CEARÁ BR</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="logo1.png" type="logo">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exclusão de Conta - Zipp</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    main {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    h2 {
+      color: #007BFF;
+      margin-bottom: 20px;
+    }
+    p {
+      margin: 10px 0;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    input, textarea, button {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+    }
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      padding: 10px 0;
+      background-color: #333;
+      color: white;
+    }
+    footer p {
+      margin: 0;
+    }
+    footer a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="logo1.png" alt="Logo" loading="lazy">
-            <h1>PCM CEARÁ BR</h1>
-        </div>
-        <div class="menu">
-            <a href="lideres/lideres.html" class="hover-text-color"><span>Líderes</span></a>
-            <a href="membros/membros.html" class="hover-text-color"><span>Membros</span></a>
-            <a href="login.html" class="hover-text-color" id="loginLink"><span>Login</span></a>
-            <a href="sobre/sobre.html" class="hover-text-color"><span>Sobre Nós</span></a>
-            <a href="https://www.instagram.com/seuusuario" class="hover-text-color" target="_blank">
-                <img src="insta-removebg-preview.png" alt="Instagram" class="instagram-icon">
-            </a>
-        </div>
-        <div class="menu-toggle">
-            <span>&#9776;</span>
-        </div>
-        <div class="dropdown-menu">
-            <a href="lideres/lideres.html" class="hover-text-color"><span>Líderes</span></a>
-            <a href="membros/membros.html" class="hover-text-color"><span>Membros</span></a>
-            <a href="login.html" class="hover-text-color" id="loginLinkDropdown"><span>Login</span></a>
-            <a href="sobre/sobre.html" class="hover-text-color"><span>Sobre Nós</span></a>
-            <a href="https://www.instagram.com/seuusuario" class="hover-text-color" target="_blank">
-                <img src="insta-removebg-preview.png" alt="Instagram" class="instagram-icon">
-            </a>
-        </div>
-    </header>
-
-    <div class="logo-destaque-container">
-        <div class="nova-logo">
-            <img src="logo1.png" alt="Nova Logo" loading="lazy">
-            <span>PCM CEARÁ BR</span>
-        </div>
-
-        <section class="destaque-jogador">
-            <div class="funcionario-destaque">
-                <img class="foto-maior" src="logo1.png" alt="Funcionário do Mês" loading="lazy">
-                <h3>Membro: PCM CEARÁ BR</h3>
-                <p>Parabéns pelo excelente trabalho!</p>
-            </div>
-        </section>
-    </div>
-
-    <main>
-        <section class="noticias">
-            <h1>Notícias</h1>
-            <div class="card hover-shadow">
-                <img src="img-noticias/festa.jpg" alt="Festa" loading="lazy">
-                <h2 class="hover-text-color">FESTA</h2>
-                <p>Depois de ser banidos mais de 3 vezes estamos ai de volta na espera de mais banimentos. A tropa desiste nunca, sempre na felicidade com o nosso lider @ Perna Cwb e os nossos membros @ Marcola Floripa e @ Neguinho Toby. Nossa tropa não para, somos os melhores de todo o GAME. "HISTORIA DE GIGANTES NAO CABE NO LIVRO."</p>
-            </div>
-            <div class="card hover-shadow">
-                <img src="img-noticias/tapetinhos.jpg" alt="Notícia 2" loading="lazy">
-                <h2 class="hover-text-color">Tapetinhos</h2>
-                <p>Depois eles viram tapetes e não sabe o porque!!! Todos de uma gangue "Tropa do ghost" trancando o estacionamento para nossa tropa nao pegar os veiculos. todos com raivinha por ontem a noite toda virarem tapetinho da nossa tropa, eles ficaram revoltados hahahaha!!! Depois vão chorar para os papais adms deles hahaha!!!</p>
-            </div>
-            <div class="card hover-shadow">
-                <img src="img-noticias/tapetinhos2.jpg" alt="Notícia 3" loading="lazy">
-                <h2 class="hover-text-color">Fracos</h2>
-                <p>Somente á "tropa do ghost" virando nosso tapete somente nossa tropa passando em cima do nosso tapetinho. ontem parece que eles estava até apaixonados pelo o chão, não podia ver a nossa tropa que ja tava de cara no chão. passaram a noite virando nosso tapetinho para ficarem espertos e ver que não são de nada!!!!! Depois vão chorar para os papais adms deles hahaha!!!</p>
-            </div>
-            <div class="card hover-shadow">
-                <img src="img-noticias/tapetinhos3.jpg" alt="Notícia 4" loading="lazy">
-                <h2 class="hover-text-color">Fracos</h2>
-                <p>Somente á "tropa do ghost" virando nosso tapete Segue a jornada de a "tropa do ghost" virando nosso tapetinho diário!!! Depois vão chorar para os papais adms deles hahaha!!!</p>
-            </div>
-
-
-              <div class="card hover-shadow">
-                <img src="3625ac98-6a95-4376-bd8e-568916919005.jpeg" alt="Notícia 4" loading="lazy">
-                <h2 class="hover-text-color">Os perigosos!!!</h2>
-                <p>Os perigosos ta na ativa. Ninguém sabe quem é mais perigoso desses ai!!💣👀</p>
-            </div>
-
-
-            
-            <div class="card hover-shadow">
-                <img src="nota.png" alt="Notícia 4" loading="lazy">
-                <h2 class="hover-text-color"></h2>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2024 Pcm Ceará Br. Todos os direitos reservados.</p>
-    </footer>
-
-    <script>
-        const logoutButton = document.createElement('button');
-        logoutButton.textContent = 'Sair';
-        logoutButton.addEventListener('click', function() {
-            localStorage.removeItem('userLogged');
-            updateLoginLogout(); // Atualiza a interface após o logout
-            window.location.href = 'index.html'; // Redireciona para index.html
-        });
-        document.querySelector('header').appendChild(logoutButton);
-
-        function updateLoginLogout() {
-            const isLogged = localStorage.getItem('userLogged');
-            const loginLink = document.getElementById('loginLink');
-            const loginLinkDropdown = document.getElementById('loginLinkDropdown');
-
-            if (isLogged) {
-                loginLink.style.display = 'none'; // Oculta o link de login se estiver logado
-                loginLinkDropdown.style.display = 'none'; // Oculta o link de login no dropdown
-                logoutButton.style.display = 'block'; // Exibe o botão de sair
-            } else {
-                loginLink.style.display = 'block'; // Exibe o link de login se não estiver logado
-                loginLinkDropdown.style.display = 'block'; // Exibe o link de login no dropdown
-                logoutButton.style.display = 'none'; // Oculta o botão de sair
-            }
-        }
-
-        // Chama a função ao carregar a página
-        updateLoginLogout();
-
-        // Script para o menu suspenso
-        const menuToggle = document.querySelector('.menu-toggle');
-        const dropdownMenu = document.querySelector('.dropdown-menu');
-
-        // Função para mostrar ou esconder o menu
-        menuToggle.addEventListener('click', function(event) {
-            dropdownMenu.classList.toggle('active');
-            event.stopPropagation();
-        });
-
-        // Fecha o menu ao clicar fora dele
-        document.addEventListener('click', function(event) {
-            if (!menuToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
-                dropdownMenu.classList.remove('active');
-            }
-        });
-    </script>
+  <header>
+    <h1>Exclusão de Conta - Zipp</h1>
+  </header>
+  <main>
+    <h2>Solicitação de Exclusão</h2>
+    <p>Se você deseja excluir sua conta no Zipp, preencha o formulário abaixo. Processaremos sua solicitação o mais rápido possível.</p>
+    <form action="mailto:zippapp01@gmail.com" method="post" enctype="text/plain">
+      <label for="name">Nome completo:</label>
+      <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
+      
+      <label for="email">E-mail cadastrado:</label>
+      <input type="email" id="email" name="email" placeholder="Seu e-mail cadastrado" required>
+      
+      <label for="reason">Motivo da exclusão (opcional):</label>
+      <textarea id="reason" name="reason" placeholder="Conte-nos o motivo (opcional)"></textarea>
+      
+      <button type="submit">Solicitar Exclusão</button>
+    </form>
+    <p><strong>Nota:</strong> Após a exclusão da conta, todos os seus dados serão removidos de nossos sistemas, conforme nossa <a href="politica-privacidade.html">Política de Privacidade</a>.</p>
+  </main>
+  <footer>
+    <p>&copy; 2025 Zipp. Todos os direitos reservados. <a href="mailto:zippapp01@gmail.com">Entre em contato</a></p>
+  </footer>
 </body>
 </html>
